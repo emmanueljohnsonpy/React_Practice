@@ -1,152 +1,85 @@
-.notfound-container {
+/* Global Container Styles */
+.container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  min-height: 100vh;
-  padding: 35px;
-  background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(255,255,255,0.7));
-  backdrop-filter: blur(10px);
-  position: relative;
-  overflow: hidden;
-  background-image: url('https://yourimageurl.com/background.jpg'); /* Add a beautiful background image */
-  background-size: cover;
-  background-position: center;
+  align-items: center;
+  height: 100vh;
+  background: #f44336; /* Classic Red */
 }
 
 .form-container {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  justify-content: center;
-  margin: 60px auto;
-  padding: 35px;
-  border-radius: 24px;
-  background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(255,255,255,0.7)); /* Optional, retains original form background */
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255,255,255,0.18);
-  box-shadow: 
-    0 8px 32px rgba(31,38,135,0.15),
-    0 2px 8px rgba(31,38,135,0.1);
-  max-width: 420px;
-  position: relative;
-  overflow: hidden;
+  background: #ffffff; /* White Background */
+  padding: 40px;
+  width: 350px;
+  border-radius: 20px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
-/* Add some animation to the background */
-.form-container::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(
-    45deg,
-    #ff6b6b, #4ecdc4, #45b7d1, #96c93d
-  );
-  opacity: 0.1;
-  z-index: -1;
-  animation: gradientBG 15s ease infinite;
-  background-size: 400% 400%;
-}
-
-@keyframes gradientBG {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+h1 {
+  color: #f44336; /* Red */
+  font-size: 30px;
+  margin-bottom: 30px;
+  font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
 }
 
 .form-input {
   width: 100%;
-  padding: 16px;
-  margin: 12px 0;
-  border: 2px solid transparent;
+  padding: 15px;
+  margin: 10px 0;
   border-radius: 12px;
-  background: rgba(255,255,255,0.9);
+  border: 1px solid #ddd;
+  background: #f7f7f7;
   font-size: 16px;
-  box-sizing: border-box;
+  color: #333;
   transition: all 0.3s ease;
-  box-shadow: 
-    inset 0 2px 4px rgba(0,0,0,0.05),
-    0 0 0 2px rgba(255,255,255,0.1);
 }
 
 .form-input:focus {
-  border-color: #4ecdc4;
-  background: rgba(255,255,255,1);
+  border-color: #f44336; /* Red Focus Border */
   outline: none;
-  transform: translateY(-2px);
-  box-shadow: 
-    0 4px 12px rgba(78,205,196,0.2),
-    0 0 0 2px rgba(78,205,196,0.1);
+  background: #ffebee; /* Light Red Background */
 }
 
 .form-button {
   width: 100%;
-  padding: 16px;
-  margin: 24px 0 8px;
-  background: linear-gradient(45deg, #4ecdc4, #45b7d1);
-  color: white;
-  font-size: 16px;
-  font-weight: 600;
+  padding: 15px;
+  background: #f44336; /* Red Button */
   border: none;
   border-radius: 12px;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
   cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.form-button::after {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(
-    45deg,
-    rgba(255,255,255,0.2),
-    rgba(255,255,255,0)
-  );
-  transform: rotate(45deg);
-  transition: all 0.3s ease;
+  transition: all 0.4s ease;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
 .form-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 
-    0 6px 20px rgba(78,205,196,0.3),
-    0 2px 8px rgba(78,205,196,0.1);
+  background: #d32f2f; /* Darker Red on Hover */
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-.form-button:hover::after {
-  left: 100%;
-  transition: all 0.7s ease;
-}
-
-/* Optional label styling */
-.form-label {
-  font-size: 14px;
+.form-toggle p {
+  text-align: center;
+  font-size: 16px;
+  color: #333;
   font-weight: 500;
-  color: #555;
-  margin-bottom: 6px;
-  transition: color 0.3s ease;
 }
 
-.form-input:focus + .form-label {
-  color: #4ecdc4;
+.form-toggle button {
+  background: none;
+  border: none;
+  color: #f44336; /* Red Text */
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: all 0.3s ease;
 }
 
-/* Optional error state */
-.form-input.error {
-  border-color: #ff6b6b;
-  background: rgba(255,107,107,0.05);
-}
-
-/* Optional success state */
-.form-input.success {
-  border-color: #96c93d;
-  background: rgba(150,201,61,0.05);
+.form-toggle button:hover {
+  color: #d32f2f; /* Darker Red Hover */
+  text-decoration: underline;
 }
